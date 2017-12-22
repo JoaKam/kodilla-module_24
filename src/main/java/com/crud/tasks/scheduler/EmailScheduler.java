@@ -22,22 +22,22 @@ public class EmailScheduler {
 
     private static final String SUBJECT = "Task: once a day email";
 
-    @Scheduled(fixedDelay = 1000)
-    public void sendInfoEmail() {
-        long size = taskRepository.count();
-        String taskWord;
-
-        if (size == 1) {
-            taskWord = " task";
-        } else {
-            taskWord = " tasks";
-        }
-
-        simpleEmailService.send(new Mail(
-                adminConfig.getAdminMail(),
-                "",
-                SUBJECT,
-                "Currently you have: " + size + taskWord
-        ));
-    }
+//    @Scheduled(fixedDelay = 1000)
+//    public void sendInfoEmail() {
+//        long size = taskRepository.count();
+//        String taskWord;
+//
+//        if (size == 1) {
+//            taskWord = " task";
+//        } else {
+//            taskWord = " tasks";
+//        }
+//
+//        simpleEmailService.send(new Mail(
+//                adminConfig.getAdminMail(),
+//                "",
+//                SUBJECT,
+//                "Currently you have: " + size + taskWord
+//        ));
+//    }
 }
