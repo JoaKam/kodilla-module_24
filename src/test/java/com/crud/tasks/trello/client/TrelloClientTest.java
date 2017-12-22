@@ -86,7 +86,7 @@ public class TrelloClientTest {
         //Then
         assertEquals("1", newCard.getId());
         assertEquals("Test task", newCard.getName());
-        assertEquals("hhtp://test.com", newCard.getShortUrl());
+        assertEquals("http://test.com", newCard.getShortUrl());
     }
 
     @Test
