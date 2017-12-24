@@ -68,7 +68,6 @@ public class TaskControllerTest {
                 .characterEncoding("UTF-8")
                 .content(jsonContent))
                 .andExpect(status().isOk());
-
     }
 
 
@@ -90,6 +89,5 @@ public class TaskControllerTest {
                 .andExpect(jsonPath("$.title", is("task title")));
 
     }
-
 
 }
