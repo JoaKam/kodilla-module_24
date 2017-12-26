@@ -76,21 +76,9 @@ public class CrudAppTestSuite {
     private void clearCrudApp(String taskName) throws InterruptedException{
         driver.navigate().refresh();
 
-        while (!driver.findElement(By.xpath("//select[1]")).isDisplayed()) ;
-
-        driver.findElements(By.xpath("//form[@class=\"datable__row\"]")).stream()
-                .filter(anyForm ->
-                        anyForm.findElement(By.xpath(".//p[@class=\"datable__field-value\"]"))
-                                .getText().equals(taskName))
-                .forEach(theForm -> {
-                    WebElement selectElement = theForm.findElement(By.xpath(".//select[1]"));
-                    Select select = new Select(selectElement);
-                    select.selectByIndex(1);
-
                     WebElement buttonDeleteTask =
-                            theForm.findElement(By.xpath(".//button[contains(@class, \"task-delete\")]"));
+                            driver.findElement(By.xpath(".//button[contains(@class, \"task-delete\")]"));
                     buttonDeleteTask.click();
-                });
 
         Thread.sleep(5000);
     }
